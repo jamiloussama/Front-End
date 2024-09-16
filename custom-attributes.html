@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="products">
+        <ul>
+            <li data-id="1" data-price="25">Product1</li>
+            <li data-id="2" data-price="30">Product2</li>
+            <li data-id="3" data-price="30">Product3</li>
+            <li data-id="4" data-price="25">Product4</li>
+        </ul>
+        <button id="btn">Filter</button>
+        <div id="display"></div>
+    </div>
+    <script>
+        var btn = document.getElementById("btn");
+        var listp = document.getElementsByTagName("li");
+        var disp = document.getElementById("display");
+        var html ="";
+
+        btn.addEventListener("click",function(){
+            for (let index = 0; index < listp.length; index++) {
+                if(listp[index].getAttribute("data-price") == "25"){
+                    html = html + listp[index].innerHTML ; 
+                }                 
+            }
+            disp.innerHTML=html;
+        })
+    </script>
+</body>
+</html>
